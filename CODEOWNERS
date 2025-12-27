@@ -1,7 +1,9 @@
+# Replace placeholders below with real GitHub usernames.
+
 # Default owners
-* @pm @backend @frontend
+* @PM_HANDLE @BACKEND_HANDLE @FRONTEND_HANDLE
 
 # Service ownership
-/apps/api/ @backend
-/apps/web/ @frontend
-/docs/ @pm @backend @frontend
+/apps/api/ @BACKEND_HANDLE
+/apps/web/ @FRONTEND_HANDLE
+/docs/ @PM_HANDLE @BACKEND_HANDLE @FRONTEND_HANDLE
