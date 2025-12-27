@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE'
+Usage: scripts/dev-stackctl <start|stop|restart|status|logs|enable|disable>
+USAGE
+}
+
+cmd="${1:-}"
+if [[ -z "${cmd}" ]]; then
+  usage
+  exit 1
+fi
+
+case "${cmd}" in
+  start|stop|restart|status|enable|disable)
+    systemctl --user "${cmd}" dev-stack.service
+    ;;
+  logs)
+    shift
+    exec journalctl --user -u dev-stack.service -f "$@"
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac

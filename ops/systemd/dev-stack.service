@@ -1,0 +1,15 @@
+[Unit]
+Description=Health API dev stack (api + web)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/dev/work/health-api
+ExecStartPre=/home/dev/work/health-api/scripts/free-ports.sh
+ExecStart=/home/dev/work/health-api/scripts/dev-stack-runner.sh
+Restart=always
+RestartSec=2
+Environment=NODE_ENV=development
+
+[Install]
+WantedBy=default.target
