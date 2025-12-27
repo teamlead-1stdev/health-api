@@ -62,6 +62,15 @@ curl -X POST http://localhost:3000/api/chat \
   -d '{"sessionId":"demo","message":"Hello"}'
 ```
 
+Manual origin check (simulate browser Origin):
+
+```bash
+curl -i -X POST http://127.0.0.1:3000/api/chat \
+  -H "Content-Type: application/json" \
+  -H "Origin: http://72.56.87.146:5173" \
+  -d '{"sessionId":"demo","message":"hi"}'
+```
+
 Expected response shape:
 
 ```json

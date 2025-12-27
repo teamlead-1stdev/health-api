@@ -14,12 +14,17 @@ const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || "0.0.0.0";
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
-const CORS_ORIGINS = (
-  process.env.CORS_ORIGINS || "http://localhost:5173,http://72.56.87.146:5173"
-)
+const DEFAULT_CORS_ORIGINS = [
+  "http://localhost:5173",
+  "http://72.56.87.146:5173",
+];
+const envCorsOrigins = (process.env.CORS_ORIGINS || "")
   .split(",")
   .map((value) => value.trim())
   .filter(Boolean);
+const CORS_ORIGINS = Array.from(
+  new Set([...DEFAULT_CORS_ORIGINS, ...envCorsOrigins]),
+);
 
 const RATE_LIMIT_MAX = Number(process.env.RATE_LIMIT_MAX || 60);
 const RATE_LIMIT_WINDOW = process.env.RATE_LIMIT_WINDOW || "1 minute";
