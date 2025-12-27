@@ -1,9 +1,9 @@
-# Replace placeholders below with real GitHub usernames.
+# Replace @yourorg/* with real GitHub teams (preferred) or users.
 
 # Default owners
-* @PM_HANDLE @BACKEND_HANDLE @FRONTEND_HANDLE
+* @yourorg/pm @yourorg/backend @yourorg/frontend
 
 # Service ownership
-/apps/api/ @BACKEND_HANDLE
-/apps/web/ @FRONTEND_HANDLE
-/docs/ @PM_HANDLE @BACKEND_HANDLE @FRONTEND_HANDLE
+/apps/api/ @yourorg/backend
+/apps/web/ @yourorg/frontend
+/docs/ @yourorg/pm @yourorg/backend @yourorg/frontend
