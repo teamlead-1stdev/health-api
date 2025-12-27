@@ -14,6 +14,20 @@ cp .env.example .env
 npm install
 ```
 
+## Environment
+
+Required:
+
+- `OPENAI_API_KEY` - API key for Codex/OpenAI requests.
+
+Optional:
+
+- `PORT` - API port (default `3000`).
+- `HOST` - bind host (default `0.0.0.0`).
+- `CORS_ORIGINS` - comma-separated list of allowed origins.
+- `RATE_LIMIT_MAX` - max requests per window (default `60`).
+- `RATE_LIMIT_WINDOW` - rate limit window (default `1 minute`).
+
 ## Run
 
 ```bash
