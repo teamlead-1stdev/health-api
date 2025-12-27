@@ -10,7 +10,9 @@ dotenv.config();
 const PORT = Number(process.env.PORT || 3000);
 const HOST = process.env.HOST || "0.0.0.0";
 
-const CORS_ORIGINS = (process.env.CORS_ORIGINS || "http://localhost:5173")
+const CORS_ORIGINS = (
+  process.env.CORS_ORIGINS || "http://localhost:5173,http://72.56.87.146:5173"
+)
   .split(",")
   .map((value) => value.trim())
   .filter(Boolean);
