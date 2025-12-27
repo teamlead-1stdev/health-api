@@ -1,0 +1,7 @@
+# Default owners
+* @pm @backend @frontend
+
+# Service ownership
+/apps/api/ @backend
+/apps/web/ @frontend
+/docs/ @pm @backend @frontend
